@@ -62,7 +62,7 @@ else {
 	</br></br></br>
 	<div class="inner narrow">
 		<header>
-			<h2>Demande d'appel directe</h2>
+			<h2>Demande d'appel direct</h2>
 		</header>
 		
 		<form class="grid-form" method="post" action="direct.php">

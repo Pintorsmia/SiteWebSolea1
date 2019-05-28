@@ -17,7 +17,7 @@ function popup($idclient,$raison,$idtech,$connex){ //on appelle cette fct lorsqu
 	}
 
 function verifieAppel($connex){
-
+	$test=false
 	$resa=ListerAppelPopIn($connex);
 	$resua = $resa->fetchAll();
 	
@@ -29,10 +29,14 @@ function verifieAppel($connex){
 			
 			if ( (isset($_SESSION['id'])) && ($ligne['idtech'] == $_SESSION['id']) ){
 				popup($ligne['idclient'],$ligne['raison'],$ligne['idtech'],$connex);
+				$test=true;
 			}/*else{
 				echo "test";
-				echo json_encode(array("option"=>"error"));
+				echo json_encode(array("option"=>"vide"));
 			}*/
+		}
+		if ($test == true){
+			echo json_encode(array("option"=>"vide"));
 		}
 	}
 }
